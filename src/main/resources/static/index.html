@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Dashboard</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/index.html"
+           class="active">
+            Dashboard
+        </a>
+
+        <a href="/grievances.html">
+            Grievances
+        </a>
+
+        <a href="/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/escalations.html">
+            Escalations
+        </a>
+
+        <a href="/departments.html">
+            Departments
+        </a>
+
+        <a href="/categories.html">
+            Categories
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+
+<main class="main-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <h1>
+            Dashboard
+        </h1>
+
+        <p>
+            Monitor citizen grievances and track resolution progress.
+        </p>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         STAT CARDS
+    ========================================================= -->
+
+    <div class="dashboard-grid">
+
+
+        <!-- TOTAL -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                G
+            </div>
+
+            <div>
+
+                <p>
+                    Total Grievances
+                </p>
+
+                <h2 id="totalGrievances">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PENDING -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                P
+            </div>
+
+            <div>
+
+                <p>
+                    Pending
+                </p>
+
+                <h2 id="pendingGrievances">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESOLVED -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                ✓
+            </div>
+
+            <div>
+
+                <p>
+                    Resolved
+                </p>
+
+                <h2 id="resolvedGrievances">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ESCALATED -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                !
+            </div>
+
+            <div>
+
+                <p>
+                    Escalated
+                </p>
+
+                <h2 id="escalatedGrievances">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         RECENT GRIEVANCES
+    ========================================================= -->
+
+    <div class="card dashboard-section">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="card-title">
+                    Recent Grievances
+                </h2>
+
+                <p class="section-description">
+                    Latest citizen complaints submitted to the system.
+                </p>
+
+            </div>
+
+
+            <a href="/grievances.html"
+               class="btn btn-secondary">
+
+                View All
+
+            </a>
+
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Citizen
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="recentGrievances">
+
+                <tr>
+
+                    <td colspan="5"
+                        style="text-align: center;">
+
+                        Loading grievances...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         QUICK ACTIONS
+    ========================================================= -->
+
+    <div class="quick-actions">
+
+
+        <!-- SUBMIT -->
+
+        <a href="/submit.html"
+           class="action-card">
+
+            <div class="action-icon">
+                +
+            </div>
+
+            <div>
+
+                <h3>
+                    Submit Grievance
+                </h3>
+
+                <p>
+                    Register a new citizen complaint.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- VIEW -->
+
+        <a href="/grievances.html"
+           class="action-card">
+
+            <div class="action-icon">
+                ≡
+            </div>
+
+            <div>
+
+                <h3>
+                    View Grievances
+                </h3>
+
+                <p>
+                    Track and manage complaints.
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- ESCALATIONS -->
+
+        <a href="/escalations.html"
+           class="action-card">
+
+            <div class="action-icon">
+                !
+            </div>
+
+            <div>
+
+                <h3>
+                    Escalations
+                </h3>
+
+                <p>
+                    Monitor SLA escalated cases.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+
+<!-- ============================================================
+     DASHBOARD JAVASCRIPT
+============================================================ -->
+
+<script src="/js/dashboard.js"></script>
+
+
+</body>
+
+</html>

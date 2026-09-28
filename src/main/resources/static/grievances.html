@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Grievances</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/index.html">
+            Dashboard
+        </a>
+
+        <a href="/grievances.html"
+           class="active">
+            Grievances
+        </a>
+
+        <a href="/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/escalations.html">
+            Escalations
+        </a>
+
+        <a href="/departments.html">
+            Departments
+        </a>
+
+        <a href="/categories.html">
+            Categories
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main class="main-container">
+
+    <div class="page-header">
+
+        <h1>
+            Grievances
+        </h1>
+
+        <p>
+            View and monitor all citizen complaints.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="card-title">
+                    All Grievances
+                </h2>
+
+                <p class="section-description">
+                    Track grievance status and resolution progress.
+                </p>
+
+            </div>
+
+            <a href="/submit.html"
+               class="btn btn-primary">
+
+                + Submit Grievance
+
+            </a>
+
+        </div>
+
+
+        <div id="message"></div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Citizen
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Department
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="grievancesTable">
+
+                <tr>
+
+                    <td colspan="7"
+                        style="text-align:center;">
+
+                        Loading grievances...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+<script src="/js/grievances.js"></script>
+
+</body>
+
+</html>

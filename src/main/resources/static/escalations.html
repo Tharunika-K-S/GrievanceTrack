@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Escalations</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/index.html">
+            Dashboard
+        </a>
+
+        <a href="/grievances.html">
+            Grievances
+        </a>
+
+        <a href="/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/escalations.html"
+           class="active">
+            Escalations
+        </a>
+
+        <a href="/departments.html">
+            Departments
+        </a>
+
+        <a href="/categories.html">
+            Categories
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+
+<main class="main-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <h1>
+            Escalations
+        </h1>
+
+        <p>
+            Monitor grievances that exceeded their SLA and were escalated.
+        </p>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         ESCALATION TABLE
+    ========================================================= -->
+
+    <div class="card">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="card-title">
+                    SLA Escalations
+                </h2>
+
+                <p class="section-description">
+                    Automatically escalated grievances and assigned senior officers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Grievance ID
+                    </th>
+
+                    <th>
+                        Citizen
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Escalated To
+                    </th>
+
+                    <th>
+                        Escalated At
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="escalationsTable">
+
+                <tr>
+
+                    <td colspan="7"
+                        style="text-align: center;">
+
+                        Loading escalations...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script src="/js/escalations.js"></script>
+
+
+</body>
+
+</html>

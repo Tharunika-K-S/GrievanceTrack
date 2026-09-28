@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Submit Grievance</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/index.html">
+            Dashboard
+        </a>
+
+        <a href="/grievances.html">
+            Grievances
+        </a>
+
+        <a href="/submit.html"
+           class="active">
+            Submit Grievance
+        </a>
+
+        <a href="/escalations.html">
+            Escalations
+        </a>
+
+        <a href="/departments.html">
+            Departments
+        </a>
+
+        <a href="/categories.html">
+            Categories
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+
+<main class="main-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <h1>
+            Submit Grievance
+        </h1>
+
+        <p>
+            Register a new citizen complaint and route it to the appropriate department.
+        </p>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         FORM CARD
+    ========================================================= -->
+
+    <div class="card">
+
+
+        <h2 class="card-title">
+            Grievance Information
+        </h2>
+
+
+        <!-- SUCCESS / ERROR MESSAGE -->
+
+        <div id="message"></div>
+
+
+
+        <!-- FORM -->
+
+        <form id="grievanceForm">
+
+
+            <!-- CITIZEN NAME -->
+
+            <div class="form-group">
+
+                <label for="citizenName">
+                    Citizen Name
+                </label>
+
+                <input
+                        type="text"
+                        id="citizenName"
+                        class="form-control"
+                        placeholder="Enter citizen name"
+                        required
+                >
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                        id="description"
+                        class="form-control"
+                        placeholder="Describe your grievance"
+                        required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="form-group">
+
+                <label for="location">
+                    Location
+                </label>
+
+                <input
+                        type="text"
+                        id="location"
+                        class="form-control"
+                        placeholder="Enter grievance location"
+                        required
+                >
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select
+                        id="category"
+                        class="form-control"
+                        required
+                >
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="page-actions">
+
+                <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                    Submit Grievance
+
+                </button>
+
+
+                <a
+                        href="/index.html"
+                        class="btn btn-secondary">
+
+                    Cancel
+
+                </a>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script src="/js/submit.js"></script>
+
+
+</body>
+
+</html>

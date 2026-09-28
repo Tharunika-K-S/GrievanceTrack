@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Departments</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/index.html">
+            Dashboard
+        </a>
+
+        <a href="/grievances.html">
+            Grievances
+        </a>
+
+        <a href="/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/escalations.html">
+            Escalations
+        </a>
+
+        <a href="/departments.html"
+           class="active">
+            Departments
+        </a>
+
+        <a href="/categories.html">
+            Categories
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+
+<main class="main-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <h1>
+            Departments
+        </h1>
+
+        <p>
+            Manage government departments and their senior officers.
+        </p>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         ADD / EDIT DEPARTMENT
+    ========================================================= -->
+
+    <div class="card"
+         style="margin-bottom: 25px;">
+
+        <h2 class="card-title"
+            id="formTitle">
+
+            Add Department
+
+        </h2>
+
+
+        <div id="message"></div>
+
+
+        <form id="departmentForm">
+
+
+            <!-- Department Name -->
+
+            <div class="form-group">
+
+                <label for="departmentName">
+
+                    Department Name
+
+                </label>
+
+                <input
+                        type="text"
+                        id="departmentName"
+                        class="form-control"
+                        placeholder="Enter department name"
+                        required
+                >
+
+            </div>
+
+
+
+            <!-- Senior Officer -->
+
+            <div class="form-group">
+
+                <label for="seniorOfficerName">
+
+                    Senior Officer Name
+
+                </label>
+
+                <input
+                        type="text"
+                        id="seniorOfficerName"
+                        class="form-control"
+                        placeholder="Enter senior officer name"
+                        required
+                >
+
+            </div>
+
+
+
+            <!-- Buttons -->
+
+            <div class="page-actions">
+
+                <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="submitButton">
+
+                    Add Department
+
+                </button>
+
+
+                <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelButton"
+                        style="display: none;">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         DEPARTMENT LIST
+    ========================================================= -->
+
+    <div class="card">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="card-title">
+
+                    Department List
+
+                </h2>
+
+                <p class="section-description">
+
+                    View and manage all registered departments.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Department
+                    </th>
+
+                    <th>
+                        Senior Officer
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="departmentsTable">
+
+                <tr>
+
+                    <td colspan="4"
+                        style="text-align: center;">
+
+                        Loading departments...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script src="/js/departments.js"></script>
+
+
+</body>
+
+</html>
