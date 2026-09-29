@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Citizen Portal</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .citizen-hero {
+            background: linear-gradient(135deg, #1f4e79, #2563eb);
+            color: white;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 28px;
+        }
+
+        .citizen-hero h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        .citizen-hero p {
+            margin: 0 0 22px;
+            max-width: 700px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 12px 22px;
+            background: white;
+            color: #1f4e79;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .citizen-section {
+            margin-top: 28px;
+        }
+
+        .citizen-section h2 {
+            margin-bottom: 6px;
+        }
+
+        .citizen-section-description {
+            color: #6b7280;
+            margin-bottom: 18px;
+        }
+
+        .citizen-actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .citizen-action {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: #111827;
+            transition: 0.2s;
+        }
+
+        .citizen-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .citizen-action-icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .citizen-action h3 {
+            margin: 0 0 8px;
+        }
+
+        .citizen-action p {
+            margin: 0;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .citizen-info {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 28px;
+        }
+
+        .citizen-info h3 {
+            margin-top: 0;
+        }
+
+        @media (max-width: 800px) {
+            .citizen-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .citizen-hero {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="/citizen/index.html" class="brand">
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/citizen/index.html" class="active">
+            Home
+        </a>
+
+        <a href="/citizen/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/citizen/grievances.html">
+            Track Grievance
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="main-container">
+    <a href="/index.html" class="btn btn-secondary">
+        ← Back to Main Page
+    </a>
+
+    <!-- HERO -->
+
+    <section class="citizen-hero">
+
+        <h1>Welcome to the Citizen Grievance Portal</h1>
+
+        <p>
+            Report civic issues, track your grievance status,
+            and stay informed about the progress of your complaint.
+        </p>
+
+        <a href="/citizen/submit.html" class="hero-button">
+            Submit a Grievance
+        </a>
+
+    </section>
+
+
+    <!-- CITIZEN ACTIONS -->
+
+    <section class="citizen-section">
+
+        <h2>What would you like to do?</h2>
+
+        <p class="citizen-section-description">
+            Use the services below to manage your grievances.
+        </p>
+
+
+        <div class="citizen-actions">
+
+            <!-- Submit -->
+
+            <a href="/citizen/submit.html" class="citizen-action">
+
+                <div class="citizen-action-icon">
+                    📝
+                </div>
+
+                <h3>Submit Grievance</h3>
+
+                <p>
+                    Report a civic issue by providing the
+                    category, description and location.
+                </p>
+
+            </a>
+
+
+            <!-- Track -->
+
+            <a href="/citizen/grievances.html" class="citizen-action">
+
+                <div class="citizen-action-icon">
+                    🔍
+                </div>
+
+                <h3>Track Grievance</h3>
+
+                <p>
+                    View grievance details and check the
+                    current status of your complaint.
+                </p>
+
+            </a>
+
+
+            <!-- Status -->
+
+            <a href="/citizen/grievances.html" class="citizen-action">
+
+                <div class="citizen-action-icon">
+                    📊
+                </div>
+
+                <h3>Check Status</h3>
+
+                <p>
+                    Follow the progress of a grievance from
+                    submission to resolution.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="citizen-section">
+
+        <div class="card">
+
+            <h2>How GrievanceTrack Works</h2>
+
+            <p class="citizen-section-description">
+                Your grievance follows a structured process.
+            </p>
+
+            <div class="detail-grid">
+
+                <div class="detail-item">
+                    <div class="detail-label">
+                        Step 1
+                    </div>
+
+                    <div class="detail-value">
+                        Submit Grievance
+                    </div>
+                </div>
+
+
+                <div class="detail-item">
+                    <div class="detail-label">
+                        Step 2
+                    </div>
+
+                    <div class="detail-value">
+                        Department Assignment
+                    </div>
+                </div>
+
+
+                <div class="detail-item">
+                    <div class="detail-label">
+                        Step 3
+                    </div>
+
+                    <div class="detail-value">
+                        Issue Processing
+                    </div>
+                </div>
+
+
+                <div class="detail-item">
+                    <div class="detail-label">
+                        Step 4
+                    </div>
+
+                    <div class="detail-value">
+                        Resolution & Closure
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SLA INFORMATION -->
+
+    <section class="citizen-info">
+
+        <h3>About SLA</h3>
+
+        <p>
+            Every grievance category has a defined Service Level
+            Agreement (SLA). If a grievance is not resolved within
+            the specified SLA period, the system automatically
+            escalates it to the responsible senior officer.
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026 |
+    Citizen Grievance Portal
+
+</footer>
+
+</body>
+
+</html>

@@ -2,33 +2,127 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>GrievanceTrack</title>
 
-    <title>GrievanceTrack - Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Common CSS -->
-    <link rel="stylesheet"
-          href="/css/style.css">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .landing {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .landing-container {
+            width: 100%;
+            max-width: 950px;
+            text-align: center;
+        }
+
+        .landing-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 18px;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .landing h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .landing-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 45px;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .portal-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 35px 30px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.25s;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+        }
+
+        .portal-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .portal-card h2 {
+            margin: 10px 0;
+            color: #111827;
+        }
+
+        .portal-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .portal-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 24px;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .landing h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- ============================================================
-     NAVBAR
-============================================================ -->
-
 <nav class="navbar">
 
-    <a href="/index.html"
-       class="brand">
-
+    <a href="/" class="brand">
         <div class="brand-icon">
             G
         </div>
@@ -36,367 +130,81 @@
         <span class="brand-text">
             GrievanceTrack
         </span>
-
     </a>
-
-
-    <div class="nav-links">
-
-        <a href="/index.html"
-           class="active">
-            Dashboard
-        </a>
-
-        <a href="/grievances.html">
-            Grievances
-        </a>
-
-        <a href="/submit.html">
-            Submit Grievance
-        </a>
-
-        <a href="/escalations.html">
-            Escalations
-        </a>
-
-        <a href="/departments.html">
-            Departments
-        </a>
-
-        <a href="/categories.html">
-            Categories
-        </a>
-
-    </div>
 
 </nav>
 
 
+<main class="landing">
 
-<!-- ============================================================
-     MAIN CONTENT
-============================================================ -->
+    <div class="landing-container">
 
-<main class="main-container">
+        <div class="landing-icon">
+            G
+        </div>
 
+        <h1>GrievanceTrack</h1>
 
-    <!-- PAGE HEADER -->
-
-    <div class="page-header">
-
-        <h1>
-            Dashboard
-        </h1>
-
-        <p>
-            Monitor citizen grievances and track resolution progress.
+        <p class="landing-subtitle">
+            Citizen Grievance Management System
         </p>
 
-    </div>
 
+        <div class="portal-grid">
 
+            <!-- Citizen Portal -->
 
-    <!-- ========================================================
-         STAT CARDS
-    ========================================================= -->
+            <a href="/citizen/index.html" class="portal-card">
 
-    <div class="dashboard-grid">
+                <div class="portal-icon">
+                    👤
+                </div>
 
-
-        <!-- TOTAL -->
-
-        <div class="stat-card">
-
-            <div class="stat-icon blue">
-                G
-            </div>
-
-            <div>
+                <h2>Citizen Portal</h2>
 
                 <p>
-                    Total Grievances
+                    Submit your grievances, track complaint status,
+                    and provide feedback after resolution.
                 </p>
 
-                <h2 id="totalGrievances">
-                    0
-                </h2>
+                <span class="portal-button">
+                    Enter Citizen Portal →
+                </span>
 
-            </div>
-
-        </div>
+            </a>
 
 
+            <!-- Officer Portal -->
 
-        <!-- PENDING -->
+            <a href="/officer/index.html" class="portal-card">
 
-        <div class="stat-card">
+                <div class="portal-icon">
+                    🛡️
+                </div>
 
-            <div class="stat-icon orange">
-                P
-            </div>
-
-            <div>
+                <h2>Officer Portal</h2>
 
                 <p>
-                    Pending
+                    Manage grievances, monitor SLA escalations,
+                    and manage departments and categories.
                 </p>
 
-                <h2 id="pendingGrievances">
-                    0
-                </h2>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESOLVED -->
-
-        <div class="stat-card">
-
-            <div class="stat-icon green">
-                ✓
-            </div>
-
-            <div>
-
-                <p>
-                    Resolved
-                </p>
-
-                <h2 id="resolvedGrievances">
-                    0
-                </h2>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ESCALATED -->
-
-        <div class="stat-card">
-
-            <div class="stat-icon red">
-                !
-            </div>
-
-            <div>
-
-                <p>
-                    Escalated
-                </p>
-
-                <h2 id="escalatedGrievances">
-                    0
-                </h2>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- ========================================================
-         RECENT GRIEVANCES
-    ========================================================= -->
-
-    <div class="card dashboard-section">
-
-
-        <div class="section-header">
-
-            <div>
-
-                <h2 class="card-title">
-                    Recent Grievances
-                </h2>
-
-                <p class="section-description">
-                    Latest citizen complaints submitted to the system.
-                </p>
-
-            </div>
-
-
-            <a href="/grievances.html"
-               class="btn btn-secondary">
-
-                View All
+                <span class="portal-button">
+                    Enter Officer Portal →
+                </span>
 
             </a>
 
         </div>
 
-
-
-        <!-- TABLE -->
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead>
-
-                <tr>
-
-                    <th>
-                        ID
-                    </th>
-
-                    <th>
-                        Citizen
-                    </th>
-
-                    <th>
-                        Category
-                    </th>
-
-                    <th>
-                        Location
-                    </th>
-
-                    <th>
-                        Status
-                    </th>
-
-                </tr>
-
-                </thead>
-
-
-                <tbody id="recentGrievances">
-
-                <tr>
-
-                    <td colspan="5"
-                        style="text-align: center;">
-
-                        Loading grievances...
-
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
     </div>
-
-
-
-    <!-- ========================================================
-         QUICK ACTIONS
-    ========================================================= -->
-
-    <div class="quick-actions">
-
-
-        <!-- SUBMIT -->
-
-        <a href="/submit.html"
-           class="action-card">
-
-            <div class="action-icon">
-                +
-            </div>
-
-            <div>
-
-                <h3>
-                    Submit Grievance
-                </h3>
-
-                <p>
-                    Register a new citizen complaint.
-                </p>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- VIEW -->
-
-        <a href="/grievances.html"
-           class="action-card">
-
-            <div class="action-icon">
-                ≡
-            </div>
-
-            <div>
-
-                <h3>
-                    View Grievances
-                </h3>
-
-                <p>
-                    Track and manage complaints.
-                </p>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- ESCALATIONS -->
-
-        <a href="/escalations.html"
-           class="action-card">
-
-            <div class="action-icon">
-                !
-            </div>
-
-            <div>
-
-                <h3>
-                    Escalations
-                </h3>
-
-                <p>
-                    Monitor SLA escalated cases.
-                </p>
-
-            </div>
-
-        </a>
-
-    </div>
-
 
 </main>
 
 
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-
 <footer class="footer">
-
     GrievanceTrack © 2026
-
 </footer>
-
-
-
-<!-- ============================================================
-     DASHBOARD JAVASCRIPT
-============================================================ -->
-
-<script src="/js/dashboard.js"></script>
-
 
 </body>
 

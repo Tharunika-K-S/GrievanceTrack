@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Track Grievance</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .citizen-page-header {
+            margin-bottom: 25px;
+        }
+
+        .citizen-page-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .citizen-page-header p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .tracking-info {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 16px 18px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .tracking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .grievance-count {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .citizen-table th {
+            white-space: nowrap;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 7px 12px;
+            background: #2563eb;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .view-button:hover {
+            opacity: 0.9;
+        }
+
+        .empty-citizen {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .empty-citizen-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .empty-citizen h3 {
+            margin-bottom: 8px;
+        }
+
+        .empty-citizen p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .submit-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+            .tracking-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .table-wrapper {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="/citizen/index.html" class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/citizen/index.html">
+            Home
+        </a>
+
+        <a href="/citizen/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/citizen/grievances.html" class="active">
+            Track Grievance
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="main-container">
+
+    <a href="/citizen/index.html" class="btn btn-secondary">
+        ← Back to Home
+    </a>
+
+    <div class="citizen-page-header">
+
+        <h1>Track Your Grievance</h1>
+
+        <p>
+            View the current status and details of your submitted complaints.
+        </p>
+
+    </div>
+
+
+    <div class="tracking-info">
+
+        <strong>Grievance Tracking</strong><br>
+
+        Select a grievance below to view its complete details,
+        current status, processing information and rating option
+        after closure.
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="tracking-header">
+
+            <div>
+
+                <h2 class="card-title">
+                    My Grievances
+                </h2>
+
+                <p class="section-description">
+                    Your submitted grievances are listed below.
+                </p>
+
+            </div>
+
+            <span
+                    id="grievanceCount"
+                    class="grievance-count">
+
+                0 Grievances
+
+            </span>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table class="citizen-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>Grievance ID</th>
+
+                    <th>Category</th>
+
+                    <th>Location</th>
+
+                    <th>Status</th>
+
+                    <th>Submitted On</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="grievancesTable">
+
+                <tr>
+
+                    <td
+                            colspan="6"
+                            style="text-align: center;">
+
+                        Loading your grievances...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUBMIT NEW -->
+
+    <div
+            style="
+            text-align: center;
+            margin-top: 25px;
+            ">
+
+        <p style="color: #6b7280;">
+            Have another issue to report?
+        </p>
+
+        <a
+                href="/citizen/submit.html"
+                class="submit-link">
+
+            + Submit New Grievance
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026 |
+    Citizen Grievance Portal
+
+</footer>
+
+
+<!-- EXISTING JAVASCRIPT -->
+
+<script src="/js/grievances.js"></script>
+
+</body>
+
+</html>oky

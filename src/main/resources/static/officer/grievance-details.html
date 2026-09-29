@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Grievance Details</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/index.html">
+            Main Page
+        </a>
+
+        <a href="/officer/index.html">
+            Dashboard
+        </a>
+
+        <a href="/officer/grievances.html" class="active">
+            Grievances
+        </a>
+
+        <a href="/officer/escalations.html">
+            Escalations
+        </a>
+
+        <a href="/officer/departments.html">
+            Departments
+        </a>
+
+        <a href="/officer/categories.html">
+            Categories
+        </a>
+
+    </div>
+</nav>
+
+
+
+<!-- ============================================================
+     MAIN
+============================================================ -->
+
+<main class="main-container">
+
+
+    <div class="page-header">
+
+        <h1>
+            Grievance Details
+        </h1>
+
+        <p>
+            View and manage the selected citizen grievance.
+        </p>
+
+    </div>
+
+
+
+    <!-- MESSAGE -->
+
+    <div id="message"></div>
+
+
+
+    <!-- ========================================================
+         GRIEVANCE INFORMATION
+    ========================================================= -->
+
+    <div class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="card-title">
+                    Grievance Information
+                </h2>
+
+                <p class="section-description">
+                    Complaint and department information.
+                </p>
+
+            </div>
+
+            <a href="/grievances.html"
+               class="btn btn-secondary">
+
+                ← Back
+
+            </a>
+
+        </div>
+
+
+        <div class="detail-grid">
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Grievance ID
+                </span>
+
+                <span class="detail-value"
+                      id="grievanceId">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Citizen Name
+                </span>
+
+                <span class="detail-value"
+                      id="citizenName">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Category
+                </span>
+
+                <span class="detail-value"
+                      id="categoryName">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Department
+                </span>
+
+                <span class="detail-value"
+                      id="departmentName">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    SLA
+                </span>
+
+                <span class="detail-value"
+                      id="slaDays">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Location
+                </span>
+
+                <span class="detail-value"
+                      id="location">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Created At
+                </span>
+
+                <span class="detail-value"
+                      id="createdAt">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Resolved At
+                </span>
+
+                <span class="detail-value"
+                      id="resolvedAt">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Current Status
+                </span>
+
+                <span id="currentStatus">
+
+                    -
+
+                </span>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Rating
+                </span>
+
+                <span class="detail-value"
+                      id="currentRating">
+
+                    Not Rated
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         DESCRIPTION
+    ========================================================= -->
+
+    <div class="card"
+         style="margin-top: 25px;">
+
+        <h2 class="card-title">
+            Complaint Description
+        </h2>
+
+        <div class="detail-item">
+
+            <p id="description">
+                Loading...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         STATUS UPDATE
+    ========================================================= -->
+
+    <div class="card"
+         style="margin-top: 25px;">
+
+        <h2 class="card-title">
+            Update Status
+        </h2>
+
+        <p class="section-description"
+           style="margin-bottom: 18px;">
+
+            Update the grievance according to the allowed workflow.
+
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="status">
+
+                New Status
+
+            </label>
+
+
+            <select id="status"
+                    class="form-control">
+
+                <option value="">
+                    Select Status
+                </option>
+
+                <option value="ASSIGNED">
+                    ASSIGNED
+                </option>
+
+                <option value="IN_PROGRESS">
+                    IN PROGRESS
+                </option>
+
+                <option value="RESOLVED">
+                    RESOLVED
+                </option>
+
+                <option value="CLOSED">
+                    CLOSED
+                </option>
+
+                <option value="ESCALATED">
+                    ESCALATED
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+                type="button"
+                class="btn btn-primary"
+                onclick="updateStatus()">
+
+            Update Status
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         RATING
+    ========================================================= -->
+
+    <div class="card"
+         style="margin-top: 25px;">
+
+        <h2 class="card-title">
+            Citizen Rating
+        </h2>
+
+        <p class="section-description"
+           style="margin-bottom: 18px;">
+
+            Rating can be added only after the grievance is closed.
+
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="rating">
+
+                Rating
+
+            </label>
+
+
+            <select id="rating"
+                    class="form-control">
+
+                <option value="">
+                    Select Rating
+                </option>
+
+                <option value="1">
+                    1 - Very Poor
+                </option>
+
+                <option value="2">
+                    2 - Poor
+                </option>
+
+                <option value="3">
+                    3 - Average
+                </option>
+
+                <option value="4">
+                    4 - Good
+                </option>
+
+                <option value="5">
+                    5 - Excellent
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+                type="button"
+                class="btn btn-success"
+                onclick="addRating()">
+
+            Submit Rating
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         DELETE
+    ========================================================= -->
+
+    <div class="card"
+         style="margin-top: 25px;">
+
+        <h2 class="card-title">
+            Danger Zone
+        </h2>
+
+        <p class="section-description"
+           style="margin-bottom: 18px;">
+
+            Delete this grievance from the system.
+
+        </p>
+
+
+        <button
+                type="button"
+                class="btn btn-danger"
+                onclick="deleteGrievance()">
+
+            Delete Grievance
+
+        </button>
+
+    </div>
+
+
+</main>
+
+
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+
+<script src="/js/grievance-details.js"></script>
+
+</body>
+
+</html>

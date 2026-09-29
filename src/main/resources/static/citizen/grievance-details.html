@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Grievance Details</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .citizen-page-header {
+            margin-bottom: 25px;
+        }
+
+        .citizen-page-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .citizen-page-header p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .status-banner {
+            padding: 18px 22px;
+            border-radius: 10px;
+            background: #f8fafc;
+            margin-bottom: 25px;
+            border-left: 5px solid #2563eb;
+        }
+
+        .status-banner h3 {
+            margin: 0 0 6px;
+        }
+
+        .status-banner p {
+            margin: 0;
+            color: #6b7280;
+        }
+
+        .tracking-card {
+            margin-bottom: 25px;
+        }
+
+        .tracking-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 35px 10px 20px;
+        }
+
+        .tracking-timeline::before {
+            content: "";
+            position: absolute;
+            top: 18px;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: #e5e7eb;
+            z-index: 0;
+        }
+
+        .timeline-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 20%;
+        }
+
+        .timeline-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #6b7280;
+        }
+
+        .timeline-step.completed .timeline-circle,
+        .timeline-step.current .timeline-circle {
+            background: #2563eb;
+            color: white;
+        }
+
+        .timeline-step.current .timeline-circle {
+            box-shadow: 0 0 0 5px #dbeafe;
+        }
+
+        .timeline-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .escalated-banner {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .escalated-banner h3 {
+            margin: 0 0 8px;
+            color: #c2410c;
+        }
+
+        .escalated-banner p {
+            margin: 5px 0;
+            color: #7c2d12;
+        }
+
+        .rating-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .rating-note {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .citizen-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            .tracking-timeline {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .tracking-timeline::before {
+                top: 18px;
+                bottom: 18px;
+                left: 18px;
+                right: auto;
+                width: 3px;
+                height: auto;
+            }
+
+            .timeline-step {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-align: left;
+            }
+
+            .timeline-circle {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .citizen-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="/citizen/index.html" class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/citizen/index.html">
+            Home
+        </a>
+
+        <a href="/citizen/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/citizen/grievances.html">
+            Track Grievance
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="main-container">
+    <a href="/citizen/grievances.html" class="btn btn-secondary">
+        ← Back to Track Grievances
+    </a>
+
+    <a href="/citizen/grievances.html" class="back-link">
+        ← Back to My Grievances
+    </a>
+
+
+    <div class="citizen-page-header">
+
+        <h1>Grievance Details</h1>
+
+        <p>
+            Track the progress of your submitted grievance.
+        </p>
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div id="loadingMessage" class="card">
+
+        Loading grievance details...
+
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <div id="detailsContent" class="hidden">
+
+
+        <!-- STATUS BANNER -->
+
+        <div id="statusBanner" class="status-banner">
+
+            <h3>
+                Current Status:
+                <span id="currentStatus"></span>
+            </h3>
+
+            <p id="statusMessage">
+                Your grievance is being processed.
+            </p>
+
+        </div>
+
+
+        <!-- ESCALATION -->
+
+        <div id="escalationBanner"
+             class="escalated-banner hidden">
+
+            <h3>
+                ⚠ Grievance Escalated
+            </h3>
+
+            <p>
+                This grievance exceeded its defined SLA
+                and has been escalated to the responsible
+                senior officer.
+            </p>
+
+            <p>
+                <strong>Escalated To:</strong>
+                <span id="escalatedOfficer">-</span>
+            </p>
+
+            <p>
+                <strong>Escalated At:</strong>
+                <span id="escalatedAt">-</span>
+            </p>
+
+        </div>
+
+
+        <!-- TRACKING TIMELINE -->
+
+        <div class="card tracking-card">
+
+            <h2 class="card-title">
+                Grievance Progress
+            </h2>
+
+            <div class="tracking-timeline">
+
+                <div
+                        id="stepSubmitted"
+                        class="timeline-step">
+
+                    <div class="timeline-circle">
+                        1
+                    </div>
+
+                    <div class="timeline-label">
+                        Submitted
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="stepAssigned"
+                        class="timeline-step">
+
+                    <div class="timeline-circle">
+                        2
+                    </div>
+
+                    <div class="timeline-label">
+                        Assigned
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="stepProgress"
+                        class="timeline-step">
+
+                    <div class="timeline-circle">
+                        3
+                    </div>
+
+                    <div class="timeline-label">
+                        In Progress
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="stepResolved"
+                        class="timeline-step">
+
+                    <div class="timeline-circle">
+                        4
+                    </div>
+
+                    <div class="timeline-label">
+                        Resolved
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="stepClosed"
+                        class="timeline-step">
+
+                    <div class="timeline-circle">
+                        5
+                    </div>
+
+                    <div class="timeline-label">
+                        Closed
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="card">
+
+            <h2 class="card-title">
+                Complaint Information
+            </h2>
+
+            <div class="detail-grid">
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Grievance ID
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="grievanceId">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Citizen
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="citizenName">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Category
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="category">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Department
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="department">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Location
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="location">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        SLA
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="sla">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Submitted On
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="createdAt">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Resolved On
+                    </div>
+
+                    <div
+                            class="detail-value"
+                            id="resolvedAt">
+                        -
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div style="margin-top: 25px;">
+
+                <div class="detail-label">
+                    Description
+                </div>
+
+                <div
+                        class="detail-value"
+                        id="description"
+                        style="margin-top: 8px; line-height: 1.6;">
+                    -
+                </div>
+
+            </div>
+
+
+            <!-- RATING -->
+
+            <div id="ratingSection"
+                 class="rating-section hidden">
+
+                <h3>
+                    Rate Your Grievance Resolution
+                </h3>
+
+                <p class="rating-note">
+                    Your grievance has been closed.
+                    Please provide a rating from 1 to 5.
+                </p>
+
+
+                <div class="form-group">
+
+                    <label for="rating">
+                        Rating
+                    </label>
+
+                    <select
+                            id="rating"
+                            class="form-control">
+
+                        <option value="">
+                            Select Rating
+                        </option>
+
+                        <option value="1">
+                            1 - Very Poor
+                        </option>
+
+                        <option value="2">
+                            2 - Poor
+                        </option>
+
+                        <option value="3">
+                            3 - Average
+                        </option>
+
+                        <option value="4">
+                            4 - Good
+                        </option>
+
+                        <option value="5">
+                            5 - Excellent
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                        id="ratingButton"
+                        class="btn btn-primary">
+
+                    Submit Rating
+
+                </button>
+
+            </div>
+
+
+            <div id="message"
+                 style="margin-top: 20px;">
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="citizen-actions">
+
+            <a
+                    href="/citizen/grievances.html"
+                    class="btn btn-secondary">
+
+                ← Back to Grievances
+
+            </a>
+
+
+            <a
+                    href="/citizen/submit.html"
+                    class="btn btn-primary">
+
+                + Submit New Grievance
+
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026 |
+    Citizen Grievance Portal
+
+</footer>
+
+
+<script src="/js/citizen/grievance-details.js"></script>
+
+</body>
+
+</html>

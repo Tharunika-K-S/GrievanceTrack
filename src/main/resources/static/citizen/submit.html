@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Submit Grievance</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .citizen-page-header {
+            margin-bottom: 25px;
+        }
+
+        .citizen-page-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .citizen-page-header p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .form-card {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-intro {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="/citizen/index.html" class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/citizen/index.html">
+            Home
+        </a>
+
+        <a href="/citizen/submit.html" class="active">
+            Submit Grievance
+        </a>
+
+        <a href="/citizen/grievances.html">
+            Track Grievance
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="main-container">
+    <a href="/citizen/index.html" class="btn btn-secondary">
+        ← Back to Home
+    </a>
+
+    <a href="/citizen/index.html" class="back-link">
+        ← Back to Citizen Portal
+    </a>
+
+
+    <div class="citizen-page-header">
+
+        <h1>Submit a Grievance</h1>
+
+        <p>
+            Report a civic issue by providing the required details below.
+        </p>
+
+    </div>
+
+
+    <div class="card form-card">
+
+        <div class="card-title">
+            Grievance Details
+        </div>
+
+
+        <div class="form-intro">
+
+            Please provide accurate information about the issue.
+            Your grievance will be routed to the relevant department
+            based on the selected category.
+
+        </div>
+
+
+        <form id="grievanceForm">
+
+            <!-- CITIZEN NAME -->
+
+            <div class="form-group">
+
+                <label for="citizenName">
+                    Your Name
+                </label>
+
+                <input
+                        type="text"
+                        id="citizenName"
+                        class="form-control"
+                        placeholder="Enter your name"
+                        required>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="category">
+                    Grievance Category
+                </label>
+
+                <select
+                        id="category"
+                        class="form-control"
+                        required>
+
+                    <option value="">
+                        Select a category
+                    </option>
+
+                </select>
+
+                <small style="color: #6b7280;">
+                    The category determines the responsible department
+                    and applicable SLA.
+                </small>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                        id="description"
+                        class="form-control"
+                        rows="6"
+                        placeholder="Describe the issue clearly..."
+                        required></textarea>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="form-group">
+
+                <label for="location">
+                    Location
+                </label>
+
+                <input
+                        type="text"
+                        id="location"
+                        class="form-control"
+                        placeholder="Enter the location of the issue"
+                        required>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="message"></div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="form-actions">
+
+                <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                    Submit Grievance
+
+                </button>
+
+
+                <a
+                        href="/citizen/index.html"
+                        class="btn btn-secondary">
+
+                    Cancel
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026 |
+    Citizen Grievance Portal
+
+</footer>
+
+
+<!-- EXISTING JAVASCRIPT -->
+
+<script src="/js/submit.js"></script>
+
+</body>
+
+</html>

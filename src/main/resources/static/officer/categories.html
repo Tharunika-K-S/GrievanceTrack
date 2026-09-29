@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GrievanceTrack - Categories</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+
+<nav class="navbar">
+
+    <a href="/index.html"
+       class="brand">
+
+        <div class="brand-icon">
+            G
+        </div>
+
+        <span class="brand-text">
+            GrievanceTrack
+        </span>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/index.html">
+            Dashboard
+        </a>
+
+        <a href="/grievances.html">
+            Grievances
+        </a>
+
+        <a href="/submit.html">
+            Submit Grievance
+        </a>
+
+        <a href="/escalations.html">
+            Escalations
+        </a>
+
+        <a href="/departments.html">
+            Departments
+        </a>
+
+        <a href="/categories.html"
+           class="active">
+            Categories
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+
+<main class="main-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <h1>
+            Categories
+        </h1>
+
+        <p>
+            Manage grievance categories, SLA duration, and departments.
+        </p>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         ADD / EDIT CATEGORY
+    ========================================================= -->
+
+    <div class="card"
+         style="margin-bottom: 25px;">
+
+        <h2 class="card-title"
+            id="formTitle">
+
+            Add Category
+
+        </h2>
+
+
+        <div id="message"></div>
+
+
+        <form id="categoryForm">
+
+
+            <!-- Category Name -->
+
+            <div class="form-group">
+
+                <label for="categoryName">
+
+                    Category Name
+
+                </label>
+
+                <input
+                        type="text"
+                        id="categoryName"
+                        class="form-control"
+                        placeholder="Enter category name"
+                        required
+                >
+
+            </div>
+
+
+
+            <!-- SLA Days -->
+
+            <div class="form-group">
+
+                <label for="slaDays">
+
+                    SLA Days
+
+                </label>
+
+                <input
+                        type="number"
+                        id="slaDays"
+                        class="form-control"
+                        placeholder="Enter SLA days"
+                        min="1"
+                        required
+                >
+
+            </div>
+
+
+
+            <!-- Department -->
+
+            <div class="form-group">
+
+                <label for="department">
+
+                    Department
+
+                </label>
+
+                <select
+                        id="department"
+                        class="form-control"
+                        required>
+
+                    <option value="">
+                        Select Department
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Buttons -->
+
+            <div class="page-actions">
+
+                <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="submitButton">
+
+                    Add Category
+
+                </button>
+
+
+                <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelButton"
+                        style="display: none;">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         CATEGORY LIST
+    ========================================================= -->
+
+    <div class="card">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="card-title">
+
+                    Category List
+
+                </h2>
+
+                <p class="section-description">
+
+                    View and manage grievance categories and their SLA.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        SLA
+                    </th>
+
+                    <th>
+                        Department
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="categoriesTable">
+
+                <tr>
+
+                    <td colspan="5"
+                        style="text-align: center;">
+
+                        Loading categories...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="footer">
+
+    GrievanceTrack © 2026
+
+</footer>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script src="/js/categories.js"></script>
+
+
+</body>
+
+</html>
